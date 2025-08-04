@@ -1,7 +1,7 @@
 "use client"; // Add this directive for client-side interactivity in Next.js App Router
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Shield, Mail, Linkedin, Github, Briefcase, Code, Star, Server, FileText, Cpu, Database, GitBranch, Award, BrainCircuit, Cloud, ShieldCheck } from 'lucide-react';
+import { Shield, Mail, Linkedin, Github, Briefcase, Code, Star, Cpu, Database, GitBranch, Award, BrainCircuit, Cloud, ShieldCheck } from 'lucide-react';
 
 // --- BACKGROUND COMPONENT ---
 const CyberBackground = () => {
@@ -33,15 +33,15 @@ const CyberBackground = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Connect particles
-      for (let a of particles) {
-        for (let b of particles) {
+      for (const a of particles) {
+        for (const b of particles) {
           if (a !== b) {
             const dx = a.x - b.x;
             const dy = a.y - b.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 120) {
-              ctx.strokeStyle = `rgba(0, 255, 255, ${1 - distance / 120})`; // Changed to cyan
+              ctx.strokeStyle = `rgba(0, 255, 255, ${1 - distance / 120})`; // Cyan color
               ctx.lineWidth = 0.5;
               ctx.beginPath();
               ctx.moveTo(a.x, a.y);
@@ -78,7 +78,7 @@ const CyberBackground = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 bg-black" />; // Changed to bg-black
+  return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 bg-black" />;
 };
 
 class Particle {
@@ -109,7 +109,7 @@ class Particle {
   }
 
   draw() {
-    this.ctx.fillStyle = 'rgba(0, 255, 255, 0.8)'; // Changed to cyan
+    this.ctx.fillStyle = 'rgba(0, 255, 255, 0.8)'; // Cyan color
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     this.ctx.fill();
@@ -251,7 +251,7 @@ const App = () => {
             <h2 className="text-3xl font-bold text-center mb-12 text-white flex items-center justify-center"><Briefcase className="mr-3 text-cyan-400"/>About Me</h2>
             <div className="max-w-4xl mx-auto bg-gray-800/50 rounded-xl shadow-2xl p-8 md:p-12 border border-gray-700 backdrop-blur-sm">
                 <p className="text-lg text-gray-300 mb-4">
-                    As a Cybersecurity Engineer with over three years of hands-on experience, I've developed a deep expertise in incident response, threat detection, GRC, and application security. I excel at managing cross-platform endpoint investigations and optimizing SIEM detections using tools like Splunk, Elastic Security, and Cortex XSOAR.
+                    As a Cybersecurity Engineer with over three years of hands-on experience, I&apos;ve developed a deep expertise in incident response, threat detection, GRC, and application security. I excel at managing cross-platform endpoint investigations and optimizing SIEM detections using tools like Splunk, Elastic Security, and Cortex XSOAR.
                 </p>
                 <p className="text-lg text-gray-300">
                     My background includes performing comprehensive security audits (SAST, DAST, VAPT), ensuring compliance with frameworks like NIST and CIS, and securing cloud-native environments. I am passionate about mentoring teams, authoring detection rules, and applying frameworks like MITRE ATT&CK to continuously improve security posture.
@@ -274,7 +274,7 @@ const App = () => {
 
         {/* Experience Section */}
         <section id="experience" className="py-24">
-          <h2 className="text-3xl font-bold text-center mb-16 text-white flex items-center justify-center"><Briefcase className="mr-3 text-cyan-400"/>Where I've Worked</h2>
+          <h2 className="text-3xl font-bold text-center mb-16 text-white flex items-center justify-center"><Briefcase className="mr-3 text-cyan-400"/>Where I&apos;ve Worked</h2>
           <div className="max-w-4xl mx-auto">
             <ExperienceItem
               title="Cyber Security Engineer"
@@ -337,7 +337,7 @@ const App = () => {
         {/* Contact Section */}
         <section id="contact" className="py-24 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Get In Touch</h2>
-          <p className="text-gray-300 mb-8 text-lg max-w-xl mx-auto">I'm actively seeking new opportunities and would love to discuss how my skills can benefit your team. Please feel free to reach out.</p>
+          <p className="text-gray-300 mb-8 text-lg max-w-xl mx-auto">I&apos;m actively seeking new opportunities and would love to discuss how my skills can benefit your team. Please feel free to reach out.</p>
           <div className="flex justify-center items-center space-x-8">
             <a href="mailto:tanishqjavvaji@gmail.com" className="group flex items-center text-cyan-400 hover:text-white transition duration-300 text-xl">
               <Mail className="mr-3 transform group-hover:-translate-y-1 transition-transform"/> tanishqjavvaji@gmail.com
